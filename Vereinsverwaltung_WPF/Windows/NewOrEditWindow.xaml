@@ -1,0 +1,42 @@
+﻿<Window x:Class="Vereinsverwaltung_WPF.Windows.NewOrEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vereinsverwaltung_WPF.Windows"
+        mc:Ignorable="d"
+        Title="NewOrEditWindow" Height="200" Width="300" MinHeight="150" MinWidth="200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="tbEdit" Grid.Row="0" Margin="0, 10, 0, 20" Visibility="Hidden">Mitglied bearbeiten</TextBlock>
+        <TextBlock x:Name="tbNew" Grid.Row="0" Margin="0, 10, 0, 20">Neues Mitglied anlegen</TextBlock>
+
+        <Grid x:Name="grdMemberFields" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0">Vorname</Label>
+            <TextBox x:Name="tbFirstName" Grid.Column="1" Text="{Binding Path=FirstName}"/>
+            <Label Grid.Column="0" Grid.Row="1">Nachname</Label>
+            <TextBox x:Name="tbLastName" Grid.Row="1" Grid.Column="1" Text="{Binding Path=LastName}"/>
+            <Label Grid.Column="0" Grid.Row="2">Geburtsdatum</Label>
+            <TextBox x:Name="tbDoB" Grid.Row="2" Grid.Column="1" Text="{Binding Path=DateOfBirth, StringFormat=dd.MM.yyyy}"/>
+        </Grid>
+        <UniformGrid Rows="1" Grid.Row="2">
+            <Button x:Name="btnSave" Margin="10, 10, 10, 10">Speichern</Button>
+            <Button x:Name="btnCancle" Margin="10, 10, 10, 10">Abbrechen</Button>
+        </UniformGrid>
+    </Grid>
+</Window>
