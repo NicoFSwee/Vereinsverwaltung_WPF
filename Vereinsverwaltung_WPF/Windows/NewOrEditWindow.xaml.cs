@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -43,7 +44,7 @@ namespace Vereinsverwaltung_WPF.Windows
         {
             btnCancle.Click += BtnCancle_Click;
             btnSave.Click += BtnSave_Click;
-            DataContext = _member;
+            DataContext = new Member() { FirstName = _member.FirstName, LastName = _member.LastName, DateOfBirth = _member.DateOfBirth };
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vereinsverwaltung_WPF.Windows"
+        xmlns:gl="clr-namespace:System.Globalization;assembly=System.Runtime"
         mc:Ignorable="d"
         Title="NewOrEditWindow" Height="200" Width="300" MinHeight="150" MinWidth="200">
     <Grid>
@@ -32,7 +33,9 @@
             <Label Grid.Column="0" Grid.Row="1">Nachname</Label>
             <TextBox x:Name="tbLastName" Grid.Row="1" Grid.Column="1" Text="{Binding Path=LastName}"/>
             <Label Grid.Column="0" Grid.Row="2">Geburtsdatum</Label>
-            <TextBox x:Name="tbDoB" Grid.Row="2" Grid.Column="1" Text="{Binding Path=DateOfBirth, StringFormat=dd.MM.yyyy}"/>
+            <TextBox x:Name="tbDoB" Grid.Row="2" Grid.Column="1" Text="{Binding Path=DateOfBirth, 
+                                                                        StringFormat=dd.MM.yyyy, 
+                                                                        ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}"/>
         </Grid>
         <UniformGrid Rows="1" Grid.Row="2">
             <Button x:Name="btnSave" Margin="10, 10, 10, 10">Speichern</Button>
