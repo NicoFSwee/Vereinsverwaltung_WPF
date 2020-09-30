@@ -44,7 +44,16 @@ namespace Vereinsverwaltung_WPF.Windows
         {
             btnCancle.Click += BtnCancle_Click;
             btnSave.Click += BtnSave_Click;
-            DataContext = new Member() { FirstName = _member.FirstName, LastName = _member.LastName, DateOfBirth = _member.DateOfBirth };
+
+            if(_member != null)
+            {
+                DataContext = new Member() { FirstName = _member.FirstName, LastName = _member.LastName, DateOfBirth = _member.DateOfBirth };
+            }
+            else
+            {
+                DataContext = new Member();
+            }
+            
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)

@@ -23,7 +23,6 @@ namespace Vereinsverwaltung_WPF
     public partial class MainWindow : Window
     {
         private List<Member> _members;
-        private Member _selectedMember;
         public MainWindow()
         {
             InitializeComponent();
@@ -36,15 +35,13 @@ namespace Vereinsverwaltung_WPF
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            _selectedMember = listViewMembers.SelectedItem as Member;
-
-            if (_selectedMember == null)
+            if (listViewMembers.SelectedItem == null)
             {
                 MessageBox.Show("Wählen Sie ein Mitglied zum bearbeiten aus!");
                 return;
             }
 
-            NewOrEditWindow newOrEditWindow = new NewOrEditWindow(_selectedMember);
+            NewOrEditWindow newOrEditWindow = new NewOrEditWindow(listViewMembers.SelectedItem as Member);
             newOrEditWindow.ShowDialog();
 
             PopulateListView();
@@ -52,22 +49,20 @@ namespace Vereinsverwaltung_WPF
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            _selectedMember = listViewMembers.SelectedItem as Member;
-
-            if(_selectedMember == null)
+            if(listViewMembers.SelectedItem == null)
             {
                 MessageBox.Show("Wählen Sie ein Mitglied zum löschen aus!");
                 return;
             }
 
-            Repository.GetInstance().DeleteMember(_selectedMember);
+            Repository.GetInstance().DeleteMember(listViewMembers.SelectedItem as Member);
 
             PopulateListView();
         }
 
         private void BtnNew_Click(object sender, RoutedEventArgs e)
         {
-            NewOrEditWindow newOrEditWindow = new NewOrEditWindow(_selectedMember);
+            NewOrEditWindow newOrEditWindow = new NewOrEditWindow(null);
             newOrEditWindow.ShowDialog();
 
             PopulateListView();
