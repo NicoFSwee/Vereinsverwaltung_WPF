@@ -30,13 +30,11 @@ namespace Vereinsverwaltung_WPF.Windows
 
             if(_member == null)
             {
-                tbEdit.Visibility = Visibility.Hidden;
-                tbNew.Visibility = Visibility.Visible;
+                tbHeader.Text = "Neues Mitglied anlegen";
             }
             else
             {
-                tbEdit.Visibility = Visibility.Visible;
-                tbNew.Visibility = Visibility.Hidden;
+                tbHeader.Text = "Mitglied bearbeiten";
             }
         }
 

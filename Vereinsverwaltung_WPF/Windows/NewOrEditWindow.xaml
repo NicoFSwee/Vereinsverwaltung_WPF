@@ -14,8 +14,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock x:Name="tbEdit" Grid.Row="0" Margin="0, 10, 0, 20" Visibility="Hidden">Mitglied bearbeiten</TextBlock>
-        <TextBlock x:Name="tbNew" Grid.Row="0" Margin="0, 10, 0, 20">Neues Mitglied anlegen</TextBlock>
+        <TextBlock x:Name="tbHeader" Grid.Row="0" Margin="5, 10, 0, 20"></TextBlock>
 
         <Grid x:Name="grdMemberFields" Grid.Row="1">
             <Grid.RowDefinitions>
