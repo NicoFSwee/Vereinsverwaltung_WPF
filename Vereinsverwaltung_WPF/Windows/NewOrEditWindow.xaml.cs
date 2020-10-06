@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
@@ -17,7 +18,7 @@ namespace Vereinsverwaltung_WPF.Windows
     /// <summary>
     /// Interaction logic for NewOrEditWindow.xaml
     /// </summary>
-    public partial class NewOrEditWindow : Window
+    public partial class NewOrEditWindow : MetroWindow
     {
         Member _member;
 
