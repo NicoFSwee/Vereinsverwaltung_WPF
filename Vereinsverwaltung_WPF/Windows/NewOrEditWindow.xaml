@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Vereinsverwaltung_WPF.Windows"
         xmlns:gl="clr-namespace:System.Globalization;assembly=System.Runtime"
         mc:Ignorable="d"
-        Title="NewOrEditWindow" Height="200" Width="300" MinHeight="150" MinWidth="200">
+        Title="NewOrEditWindow" Height="220" Width="300" MinHeight="150" MinWidth="200">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
